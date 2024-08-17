@@ -1,0 +1,35 @@
+# Emacs major mode for PIC using Tree-sitter
+
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![Build Status](https://github.com/smoeding/pic-ts-mode/actions/workflows/CI.yaml/badge.svg)](https://github.com/smoeding/pic-ts-mode/actions/workflows/CI.yaml)
+
+This is a major mode for [GNU Emacs](https://www.gnu.org/software/emacs/) 29.1 or later which adds support for the PIC domain-specific language. It uses a Tree-sitter parser to be able to parse the code and provide fontification, indentation, navigation and more.
+
+## Features
+
+The mode provides the following features and enhancements to make writing PIC diagrams easier.
+
+### Navigation
+
+The keybindings <kbd>C-M-a</kbd> and <kbd>C-M-e</kbd> jump to preceding or following element respectively.
+
+## Installation
+
+Emacs 29.1 or above with Tree-sitter support is required.
+
+Also the appropriate [parser](https://github.com/smoeding/tree-sitter-pic) for the PIC language needs to be installed. Note that there are different parsers available and only the referenced parser will work with this code.
+
+The following Elisp code should be used to install the PIC language parser.  This requires some tools -- notably a compiler toolchain -- to be available on your machine.
+
+```elisp
+(require 'pic-ts-mode)
+(pic-ts-mode-install-grammar)
+```
+
+Using the function provided by the package ensures that a version of the parser matching the package will be installed. These commands should also be used to update the parser to the correct version when the package is updated.
+
+## License
+
+PIC Tree-sitter Mode is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+PIC Tree-sitter Mode is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
