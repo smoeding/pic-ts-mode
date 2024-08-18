@@ -3,11 +3,11 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Build Status](https://github.com/smoeding/pic-ts-mode/actions/workflows/CI.yaml/badge.svg)](https://github.com/smoeding/pic-ts-mode/actions/workflows/CI.yaml)
 
-This is a major mode for [GNU Emacs](https://www.gnu.org/software/emacs/) 29.1 or later which adds support for the PIC domain-specific language. It uses a Tree-sitter parser to be able to parse the code and provide fontification, indentation, navigation and more.
+This is a major mode for [GNU Emacs](https://www.gnu.org/software/emacs/) 29.1 or later which adds support for the Pic language. Pic is a domain-specific language by Brian W. Kernighan for specifying diagrams. The mode uses a Tree-sitter parser to be able to parse the code and provide fontification, indentation, navigation and more.
 
 ## Features
 
-The mode provides the following features and enhancements to make writing PIC diagrams easier.
+The mode provides the following features and enhancements to make writing Pic diagrams easier.
 
 ### Navigation
 
@@ -17,9 +17,7 @@ The keybindings <kbd>C-M-a</kbd> and <kbd>C-M-e</kbd> jump to preceding or follo
 
 Emacs 29.1 or above with Tree-sitter support is required.
 
-Also the appropriate [parser](https://github.com/smoeding/tree-sitter-pic) for the PIC language needs to be installed. Note that there are different parsers available and only the referenced parser will work with this code.
-
-The following Elisp code should be used to install the PIC language parser.  This requires some tools -- notably a compiler toolchain -- to be available on your machine.
+Also the appropriate [parser](https://github.com/smoeding/tree-sitter-pic) for the Pic language needs to be installed. The following Elisp code should be used to install the Pic language parser.  This requires some tools -- notably a compiler toolchain -- to be available on your machine.
 
 ```elisp
 (require 'pic-ts-mode)
@@ -30,6 +28,6 @@ Using the function provided by the package ensures that a version of the parser 
 
 ## License
 
-PIC Tree-sitter Mode is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+Pic Tree-sitter Mode is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
-PIC Tree-sitter Mode is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+Pic Tree-sitter Mode is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
