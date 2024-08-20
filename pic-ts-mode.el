@@ -69,12 +69,6 @@
   :group 'languages
   :link '(url-link :tag "Repository" "https://github.com/smoeding/pic-ts-mode"))
 
-(defvar pic-ts--builtin-functions-regex
-  (regexp-opt
-   '("atan2" "cos" "exp" "int" "log" "max" "min" "rand" "sin" "sqrt" "srand")
-   'words)
-  "Regular expression matchin all builtin functions used in Pic.")
-
 
 ;; Faces
 
@@ -192,6 +186,13 @@ The function removes existing entries for the Pic language in
 
 
 ;; Font-Lock
+
+(defvar pic-ts--builtin-functions-regex
+  (regexp-opt
+   '("atan2" "cos" "exp" "int" "log" "max" "min" "rand" "sin" "sqrt" "srand")
+   'words)
+  "Regular expression matchin all builtin functions used in Pic.")
+
 (defvar pic-ts-mode-feature-list
   ;; Level 1 usually contains only comments and definitions.
   ;; Level 2 usually adds keywords, strings, data types, etc.
