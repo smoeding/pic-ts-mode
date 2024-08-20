@@ -9,6 +9,27 @@ This is a major mode for [GNU Emacs](https://www.gnu.org/software/emacs/) 29.1 o
 
 The mode provides the following features and enhancements to make writing Pic diagrams easier.
 
+### Syntax highlighting
+
+Syntax highlighting for the following elements is implemented:
+
+- comments
+- strings (including some escape sequences)
+- numbers
+- variables
+- primitives
+- built-in functions
+- macros
+- labels
+- corners
+- keywords (`if`, `then`, `else`, `for`, `to`, `by`, `do`, ...)
+- troff requests and macro calls
+- syntax errors
+
+### Indentation
+
+Indentation for block structures is implemented.
+
 ### Navigation
 
 The keybindings <kbd>C-M-a</kbd> and <kbd>C-M-e</kbd> jump to preceding or following element respectively.
@@ -30,4 +51,4 @@ Using the function provided by the package ensures that a version of the parser 
 
 Pic Tree-sitter Mode is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
-Pic Tree-sitter Mode is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+Pic Tree-sitter Mode is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the [GNU General Public License](http://www.gnu.org/licenses/) for more details.
