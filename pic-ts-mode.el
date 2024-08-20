@@ -6,7 +6,7 @@
 ;; Maintainer:       Stefan Möding <stm@kill-9.net>
 ;; Version:          0.1.0
 ;; Created:          <2024-07-31 13:53:08 stm>
-;; Updated:          <2024-08-17 13:53:05 stm>
+;; Updated:          <2024-08-20 17:30:14 stm>
 ;; URL:              https://github.com/smoeding/pic-ts-mode
 ;; Keywords:         languages
 ;; Package-Requires: ((emacs "29.1"))
@@ -37,12 +37,11 @@
 ;;   errors can be shown using a warning face by setting
 ;;   `treesit-font-lock-level' to 4.
 ;;
-;; Indentation: The Pic language is simple and does not use sophisticated
-;;   indentation rules so only a simple indentation for blocks is provided.
+;; Indentation: Pic is simple language and does not use sophisticated
+;;   indentation rules so only simple block indentation is provided.
 ;;
-;; The package uses a Tree-sitter library to parse Pic code and you need
-;; to install the appropriate parser.  This can be done by using this Elisp
-;; code:
+;; The package uses a Tree-sitter library to parse Pic code and you need to
+;; install the appropriate parser.  It can be done by using this Elisp code:
 ;;
 ;;    (require 'pic-ts-mode)
 ;;    (pic-ts-mode-install-grammar)
@@ -292,9 +291,13 @@ The function removes existing entries for the Pic language in
   `((pic
      ;; top-level elements start in column zero
      ((parent-is "picture") column-0 0)
+     ;; closing blocks
+     ((node-is "]") grand-parent 0)
+     ((node-is "}") grand-parent 0)
+     ;; Special cases for if/for statements
+     ((n-p-gp nil "delimited" "if") grand-parent pic-ts-indent-level)
+     ((n-p-gp nil "delimited" "for") grand-parent pic-ts-indent-level)
      ;; (delimited) blocks
-     ((node-is "]") parent-bol 0)
-     ((node-is "}") parent-bol 0)
      ((parent-is "block") parent-bol pic-ts-indent-level)
      ((parent-is "delimited") parent-bol pic-ts-indent-level)
      ;; default
